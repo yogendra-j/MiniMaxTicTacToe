@@ -17,22 +17,25 @@ body > div {
   color: rgb(230, 106, 24);
   height: 100vh;
   width: 100vw;
-  font-size: 12vw;
+  font-size: min(12vh, 12vw);
   flex-direction: column;
 }
 .buttons {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 button {
-  font-size: 12vw;
-  width: 35vw;
-  height: 8vh;
-  margin-left: 5vw;
+  font-size: 0.5em;
+  padding: 2% 4%;
+  margin: 0.2em;
+  width: 3em;
+  height: 1.5em;
   background-color: rgb(216, 230, 18);
   border: none;
   border-radius: 8%;
   color: rgb(221, 103, 24);
+  text-align: center;
 }
 button:hover {
   background-color: rgb(206, 44, 44);
