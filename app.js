@@ -1,3 +1,5 @@
+import { backgroundAnimation, levelUp } from "./animation.js";
+
 let canvas,
   buttons,
   menu,
@@ -28,8 +30,8 @@ const init = () => {
   c = canvas.getContext("2d");
 
   //move colors
-  colorX = "lightblue";
-  colorY = "silver";
+  colorX = "rgb(222,122,11)";
+  colorY = "rgb(51,141,221)";
 
   //square board
   boardDimension = Math.min(Math.floor((canvas.width * 0.8) / 3) * 3, 600);
@@ -37,6 +39,7 @@ const init = () => {
   startBoardY = (canvas.height - boardDimension) / 2 + 30;
   startBoardX = (canvas.width - boardDimension) / 2;
   drawTTTBoard();
+  backgroundAnimation();
 };
 
 //Ask who'll go first
@@ -97,7 +100,7 @@ const drawTTTBoard = () => {
   );
 };
 //draw line b/w two points
-function drawLine(start, finish, color = "black") {
+function drawLine(start, finish, color = "rgb(84,172,94") {
   c.beginPath();
   c.strokeStyle = color;
   c.moveTo(...start);
@@ -117,7 +120,7 @@ function playerMove(e) {
       if (typeof winningCells === "object") gameover(winningCells);
     }
     //call ai to move
-    aiMove();
+    setTimeout(aiMove, 300);
   }
 }
 //get row/col of click cell
@@ -228,6 +231,7 @@ const gameover = (winningCells) => {
   document.getElementById("msg").textContent = result;
   setTimeout(() => menu.classList.remove("hidden"), 300);
   gameRunning = false;
+  levelUp();
 };
 
 function getCodinates(row, col) {

@@ -45,3 +45,14 @@ button:hover {
 .hidden {
   display: none;
 }
+#canvas1 {
+  position: absolute;
+  opacity: 0.99;
+  z-index: -1;
+  background-color: rgba(188, 179, 190, 0.7);
+}
+#canvas2 {
+  position: absolute;
+  opacity: 0.2;
+  z-index: -2;
+}
